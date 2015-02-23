@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>Fiori Products App</title>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta charset="UTF-8" />
+
+		<script id='sap-ui-bootstrap'
+			src='/ui5/latest/resources/sap-ui-core.js'
+			data-sap-ui-theme='sap_bluecrystal'
+			data-sap-ui-libs='sap.m'
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-resourceroots='{
+				"openui5" : "./"
+			}' >
+		</script>
+
+		<script>
+			new sap.m.Shell("Shell", {
+				title : "Products",
+				app : new sap.ui.core.ComponentContainer({
+					name : 'openui5'
+				})
+			}).placeAt('content');
+		</script>
+
+	</head>
+
+	<body id="content"
+		class="sapUiBody" />
+
+</html>
