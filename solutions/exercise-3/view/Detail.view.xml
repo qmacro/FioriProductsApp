@@ -23,6 +23,5 @@
 					text="{Rating}" />
 			</firstStatus>
 		</ObjectHeader>
-
 	</Page>
 </mvc:View>
