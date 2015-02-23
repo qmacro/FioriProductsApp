@@ -1,0 +1,14 @@
+<mvc:View
+	controllerName="openui5.view.Master"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page title="Page Title">
+		<List>
+			<items>
+				<StandardListItem
+					type="Active"
+					title="ListItemTitle" />
+			</items>
+		</List>
+	</Page>
+</mvc:View>
