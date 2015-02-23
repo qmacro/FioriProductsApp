@@ -1,0 +1,27 @@
+<mvc:View
+	controllerName="openui5.view.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page id="page"
+		title="{i18n>DetailTitle}"
+		showNavButton="true"
+		navButtonPress="onBack">
+		<ObjectHeader
+			title="{Name}"
+			number="{Price}"
+			numberUnit="Euro">
+			<attributes>
+				<ObjectAttribute
+					text="{Description}" />
+				<ObjectAttribute
+					text="{ReleaseDate}" />
+				<ObjectAttribute
+					text="{DiscontinuedDate}" />
+			</attributes>
+			<firstStatus>
+				<ObjectStatus
+					text="{Rating}" />
+			</firstStatus>
+		</ObjectHeader>
+	</Page>
+</mvc:View>

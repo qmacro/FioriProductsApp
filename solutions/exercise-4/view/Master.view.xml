@@ -1,0 +1,27 @@
+<mvc:View
+	controllerName="openui5.view.Master"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page title="{i18n>MasterTitle}">
+		<List
+			items="{/Products}">
+			<items>
+				<ObjectListItem
+					type="Active"
+					press="onPress"
+					title="{Name}"
+					number="{Price}"
+					numberUnit="Euro">
+					<attributes>
+						<ObjectAttribute
+							text="{ReleaseDate}" />
+					</attributes>
+					<firstStatus>
+						<ObjectStatus
+							text="{Rating}" />
+					</firstStatus>
+			</ObjectListItem>
+			</items>
+		</List>
+	</Page>
+</mvc:View>
