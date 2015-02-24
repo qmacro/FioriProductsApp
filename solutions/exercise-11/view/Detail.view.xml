@@ -1,0 +1,123 @@
+<mvc:View
+	controllerName="openui5.view.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Page id="page"
+		title="{i18n>DetailTitle}"
+		showNavButton="{device>/isPhone}"
+		navButtonPress="onBack">
+		<ObjectHeader
+			title="{Name}"
+			number="{Price}"
+			numberUnit="Euro">
+			<attributes>
+				<ObjectAttribute
+					text="{Description}" />
+				<ObjectAttribute
+					text="{
+						path : 'ReleaseDate',
+						formatter : 'openui5.util.formatter.date'
+					}" />
+				<ObjectAttribute
+					text="{
+						path : 'DiscontinuedDate',
+						formatter : 'openui5.util.formatter.date'
+					}" />
+			</attributes>
+			<firstStatus>
+				<ObjectStatus
+					text="{
+						path : 'Rating',
+						formatter : 'openui5.util.formatter.ratingTextLong'
+					}"
+					state="{
+						path : 'Rating',
+						formatter : 'openui5.util.formatter.ratingState'
+					}" />
+			</firstStatus>
+		</ObjectHeader>
+		<IconTabBar>
+			<items>
+				<IconTabFilter
+					key="supplier"
+					binding="{Supplier}"
+					text="{i18n>iconTabFilterSupplier}"
+					icon="sap-icon://supplier">
+					<content>
+						<l:Grid
+							defaultSpan="L12 M12 S12"
+							width="auto">
+							<l:content>
+								<f:SimpleForm
+									minWidth="1024"
+									maxContainerCols="2"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									title="{i18n>supplierAddress}"
+									labelSpanL="3"
+									emptySpanL="4"
+									columnsL="1">
+									<f:content>
+										<Label text="{i18n>supplierAddressName}" />
+										<Text text="{Name}" />
+										<Label text="{i18n>supplierAddressStreet}" />
+										<Text text="{Address/Street}" />
+										<Label text="{i18n>supplierAddressCity}" />
+										<Text text="{Address/City}" />
+										<Label text="{i18n>supplierAddressZIPCode}" />
+										<Text text="{Address/ZipCode}" />
+										<Label text="{i18n>supplierAddressCountry}" />
+										<Text text="{Address/Country}" />
+									</f:content>
+								</f:SimpleForm>
+							</l:content>
+						</l:Grid>
+					</content>
+				</IconTabFilter>
+				<IconTabFilter
+					key="category"
+					binding="{Category}"
+					text="{i18n>iconTabFilterCategory}"
+					icon="sap-icon://hint">
+					<content>
+						<l:Grid
+							defaultSpan="L12 M12 S12"
+							width="auto">
+							<l:content>
+								<f:SimpleForm
+									minWidth="1024"
+									maxContainerCols="2"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									title="{i18n>categoryInfo}"
+									labelSpanL="3"
+									emptySpanL="4"
+									columnsL="1">
+									<f:content>
+										<Label text="{i18n>categoryInfoID}" />
+										<Text text="{ID}" />
+										<Label text="{i18n>categoryInfoName}" />
+										<Text text="{Name}" />
+									</f:content>
+								</f:SimpleForm>
+							</l:content>
+						</l:Grid>
+					</content>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button
+						text="{i18n>deleteButtonText}"
+						type="Reject"
+						icon="sap-icon://delete"
+						press="onDelete" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
