@@ -1,0 +1,40 @@
+<mvc:View
+	controllerName="openui5.view.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page id="page"
+		title="{i18n>DetailTitle}"
+		showNavButton="true"
+		navButtonPress="onBack">
+		<ObjectHeader
+			title="{Name}"
+			number="{Price}"
+			numberUnit="Euro">
+			<attributes>
+				<ObjectAttribute
+					text="{Description}" />
+				<ObjectAttribute
+					text="{
+						path : 'ReleaseDate',
+						formatter : 'openui5.util.formatter.date'
+					}" />
+				<ObjectAttribute
+					text="{
+						path : 'DiscontinuedDate',
+						formatter : 'openui5.util.formatter.date'
+					}" />
+			</attributes>
+			<firstStatus>
+				<ObjectStatus
+					text="{
+						path : 'Rating',
+						formatter : 'openui5.util.formatter.ratingTextLong'
+					}"
+					state="{
+						path : 'Rating',
+						formatter : 'openui5.util.formatter.ratingState'
+					}" />
+			</firstStatus>
+		</ObjectHeader>
+	</Page>
+</mvc:View>
