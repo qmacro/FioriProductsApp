@@ -1,0 +1,48 @@
+<mvc:View
+	controllerName="openui5.view.Master"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page title="{i18n>MasterTitle}">
+		<subHeader>
+			<Bar>
+				<contentMiddle>
+					<SearchField
+						search="onSearch"
+						width="100%" />
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<List id="list"
+			mode="{device>/listMode}"
+			select="onSelect"
+			items="{/Products}">
+			<items>
+				<ObjectListItem
+					type="{device>/listItemType}"
+					press="onPress"
+					title="{Name}"
+					number="{Price}"
+					numberUnit="Euro">
+					<attributes>
+						<ObjectAttribute
+							text="{
+								path : 'ReleaseDate',
+								formatter : 'openui5.util.formatter.date'
+							}" />
+					</attributes>
+					<firstStatus>
+						<ObjectStatus
+							text="{
+								path : 'Rating',
+								formatter : 'openui5.util.formatter.ratingText'
+							}"
+							state="{
+								path : 'Rating',
+								formatter : 'openui5.util.formatter.ratingState'
+							}" />
+					</firstStatus>
+			</ObjectListItem>
+			</items>
+		</List>
+	</Page>
+</mvc:View>
