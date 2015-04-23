@@ -17,5 +17,5 @@ app.use(sapui5,express.static(__dirname, { maxAge: year, hidden: true }));
 app.use(sapui5,express.directory(__dirname));
 
 app.listen(port);
-open("http://localhost:8888/ui5/"); //open in default browser
+open("http://localhost:" + port + "/ui5/"); //open in default browser
 console.log("Static file server running at\n  => " + url + " \nCTRL + C to shutdown");
