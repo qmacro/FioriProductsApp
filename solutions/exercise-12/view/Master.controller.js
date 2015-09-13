@@ -23,7 +23,7 @@ openui5.util.Controller.extend("openui5.view.Master", {
 		var aFilters = [];
 		var sQuery = oEvent.getParameter("query");
 		if (sQuery && sQuery.length > 0) {
-			var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.Contains, sQuery);
+			var oFilter = new sap.ui.model.Filter("ProductName", sap.ui.model.FilterOperator.Contains, sQuery);
 			aFilters.push(oFilter);
 		}
 

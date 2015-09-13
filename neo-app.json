@@ -9,6 +9,15 @@
         "entryPath": "/resources"
       },
       "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "northwind",
+      "target": {
+        "type": "destination",
+        "name": "public-odata-services",
+        "entryPath": "/V3/Northwind/Northwind.svc/"
+      },
+      "description": "Northwind"
     }
   ]
 }

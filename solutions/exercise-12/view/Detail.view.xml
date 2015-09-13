@@ -9,33 +9,16 @@
 		showNavButton="{device>/isPhone}"
 		navButtonPress="onBack">
 		<ObjectHeader
-			title="{Name}"
-			number="{Price}"
+			title="{ProductName}"
+			number="{UnitPrice}"
 			numberUnit="Euro">
 			<attributes>
 				<ObjectAttribute
-					text="{Description}" />
-				<ObjectAttribute
-					text="{
-						path : 'ReleaseDate',
-						formatter : 'openui5.util.formatter.date'
-					}" />
-				<ObjectAttribute
-					text="{
-						path : 'DiscontinuedDate',
-						formatter : 'openui5.util.formatter.date'
-					}" />
+					text="{QuantityPerUnit}" />
 			</attributes>
 			<firstStatus>
 				<ObjectStatus
-					text="{
-						path : 'Rating',
-						formatter : 'openui5.util.formatter.ratingTextLong'
-					}"
-					state="{
-						path : 'Rating',
-						formatter : 'openui5.util.formatter.ratingState'
-					}" />
+					text="{UnitsInStock}/{ReorderLevel}/{UnitsOnOrder}" />
 			</firstStatus>
 		</ObjectHeader>
 		<IconTabBar>
@@ -61,15 +44,15 @@
 									columnsL="1">
 									<f:content>
 										<Label text="{i18n>supplierAddressName}" />
-										<Text text="{Name}" />
+										<Text text="{CompanyName}" />
 										<Label text="{i18n>supplierAddressStreet}" />
-										<Text text="{Address/Street}" />
+										<Text text="{Address}" />
 										<Label text="{i18n>supplierAddressCity}" />
-										<Text text="{Address/City}" />
+										<Text text="{City}" />
 										<Label text="{i18n>supplierAddressZIPCode}" />
-										<Text text="{Address/ZipCode}" />
+										<Text text="{PostalCode}" />
 										<Label text="{i18n>supplierAddressCountry}" />
-										<Text text="{Address/Country}" />
+										<Text text="{Country}" />
 									</f:content>
 								</f:SimpleForm>
 							</l:content>
@@ -97,9 +80,11 @@
 									columnsL="1">
 									<f:content>
 										<Label text="{i18n>categoryInfoID}" />
-										<Text text="{ID}" />
+										<Text text="{CategoryID}" />
 										<Label text="{i18n>categoryInfoName}" />
-										<Text text="{Name}" />
+										<Text text="{CategoryName}" />
+										<Label text="{i18n>categoryInfoDescription}" />
+										<Text text="{Description}" />
 									</f:content>
 								</f:SimpleForm>
 							</l:content>
@@ -112,9 +97,11 @@
 			<Bar>
 				<contentRight>
 					<Button
+						tooltip="{i18n>deleteDisabled}"
 						text="{i18n>deleteButtonText}"
 						type="Reject"
 						icon="sap-icon://delete"
+						enabled="false"
 						press="onDelete" />
 				</contentRight>
 			</Bar>

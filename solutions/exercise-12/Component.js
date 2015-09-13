@@ -32,9 +32,9 @@ sap.ui.core.UIComponent.extend("openui5.Component", {
 	init : function() {
 		sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
 
-		var sServiceUrl = "/Service/";
+		var sServiceUrl = "/northwind";
 
-		this._startMockServer(sServiceUrl);
+		//this._startMockServer(sServiceUrl);
 
 		// Create and set domain model to the component
 		var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
