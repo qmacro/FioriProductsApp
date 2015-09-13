@@ -10,7 +10,13 @@
 		navButtonPress="onBack">
 		<ObjectHeader
 			title="{ProductName}"
-			number="{UnitPrice}"
+			number="{
+				path : 'UnitPrice',
+				type : 'sap.ui.model.type.Float',
+				formatOptions : {
+					maxFractionDigits : 2
+				}
+			}"
 			numberUnit="Euro">
 			<attributes>
 				<ObjectAttribute
